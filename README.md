@@ -88,4 +88,4 @@ Laravel MSM [MIT lisenziyası](https://github.com/orkhanshukurlu/laravel-msm/blo
 
 ### Əlaqə
 
-Linkedin: [Orxan Şükürlü](https://www.linkedin.com/in/orkhansh/)
+Telegram: [Orxan Şükürlü](https://t.me/orkhanshukurlu/)
