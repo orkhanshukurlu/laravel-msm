@@ -1,0 +1,45 @@
+{
+    "name": "orkhanshukurlu/laravel-msm",
+    "description": "A package written for sending SMS with MSM provider in Laravel",
+    "keywords": [
+        "orkhanshukurlu",
+        "laravel",
+        "msm",
+        "sms"
+    ],
+    "homepage": "https://github.com/orkhanshukurlu/laravel-msm",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Orkhan Shukurlu",
+            "email": "orkhandev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/container": "^10.0",
+        "illuminate/database": "^10.0",
+        "illuminate/support": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OrkhanShukurlu\\MSM\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OrkhanShukurlu\\MSM\\MSMServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
