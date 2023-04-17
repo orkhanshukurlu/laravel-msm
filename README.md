@@ -80,7 +80,7 @@ MSMLog::getByPhone('+994773339800');
 
 ```
 
-> Göndərilən bütün SMS sorğuları daha ətraflı məlumat əldə etmək üçün `MSMLog` modelindən istifadə edə bilərsiniz
+> Göndərilən bütün SMS sorğuları haqqında daha ətraflı məlumat əldə etmək üçün `MSMLog` modelindən istifadə edə bilərsiniz
 
 ### Lisenziya
 
