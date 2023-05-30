@@ -45,16 +45,32 @@ final class MSMLog extends Model
     protected $table = 'msm_logs';
 
     /**
-     * Get all log data by the phone number.
+     * Get all log data by the response code.
      *
-     * @param int|string $phone
+     * @param int $code
+     * @param array $columns
      *
      * @return Collection
      */
-    public static function getByPhone(int|string $phone): Collection
+    public static function getByCode(int $code, array $columns = ['*']): Collection
+    {
+        return self::query()
+            ->where('response_code', $code)
+            ->get($columns);
+    }
+
+    /**
+     * Get all log data by the phone number.
+     *
+     * @param int|string $phone
+     * @param array $columns
+     *
+     * @return Collection
+     */
+    public static function getByPhone(int|string $phone, array $columns = ['*']): Collection
     {
         return self::query()
             ->where('phone', $phone)
-            ->get();
+            ->get($columns);
     }
 }
