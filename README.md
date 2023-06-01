@@ -80,7 +80,6 @@ MSMLog::getByPhone('+994773339800');
 
 ```
 
-<<<<<<< HEAD
 > MSM tərəfindən verilən dokumentasiyada qeyd olunan status kodlarına uyğun bütün SMS sorğuları haqqında məlumat əldə etmək üçün `getByCode` metodundan istifadə edə bilərsiniz
 
 ```php
@@ -98,11 +97,6 @@ MSMLog::getByPhone('+994773339800', ['id', 'phone', 'message']);
 MSMLog::getByCode(100, ['id', 'phone', 'message', 'response_code']);
 
 ```
-
-> Göndərilən bütün SMS sorğuları daha ətraflı məlumat əldə etmək üçün `MSMLog` modelindən istifadə edə bilərsiniz
-=======
-> Göndərilən bütün SMS sorğuları haqqında daha ətraflı məlumat əldə etmək üçün `MSMLog` modelindən istifadə edə bilərsiniz
->>>>>>> 777fb5dae0e8dead8a9705b2ee3b9fec1290439f
 
 ### Lisenziya
 
