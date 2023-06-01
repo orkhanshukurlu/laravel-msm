@@ -88,7 +88,7 @@ MSMLog::getByCode(100);
 
 ```
 
-> Əgər bu 2 metod istifadə edərkən cədvəldən bütün sütunları yox, ancaq istədiyiniz sütunları gətirmək istəyirsinizsə metodları aşağıdakı kimi istifadə edə bilərsiniz
+> Əgər bu 2 metodu istifadə edərkən cədvəldən bütün sütunları yox, ancaq istədiyiniz sütunları gətirmək istəyirsinizsə metodları aşağıdakı kimi istifadə edə bilərsiniz
 
 ```php
 
