@@ -48,7 +48,7 @@ final class MSMLog extends Model
      * Get all log data by the response code.
      *
      * @param int $code
-     * @param array $columns
+     * @param string[] $columns
      *
      * @return Collection
      */
@@ -63,7 +63,7 @@ final class MSMLog extends Model
      * Get all log data by the phone number.
      *
      * @param int|string $phone
-     * @param array $columns
+     * @param string[] $columns
      *
      * @return Collection
      */

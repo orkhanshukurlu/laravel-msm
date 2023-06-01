@@ -59,14 +59,14 @@ final class SendSMS
      *
      * @var string|null
      */
-    private ?string $code = null;
+    private ?string $code;
 
     /**
      * Response text from request.
      *
      * @var string|null
      */
-    private ?string $text = null;
+    private ?string $text;
 
     /**
      * Create a new send SMS instance.
@@ -87,10 +87,10 @@ final class SendSMS
      * @param int|string $phone
      * @param int|string $message
      *
-     * @return void
-     *
      * @throws SMSNotSentException
      * @throws Throwable
+     *
+     * @return void
      */
     public function send(int|string $phone, int|string $message): void
     {
@@ -174,13 +174,17 @@ final class SendSMS
     /**
      * Throw an exception if SMS is not sent.
      *
-     * @return void
-     *
      * @throws SMSNotSentException
      * @throws Throwable
+     *
+     * @return void
      */
     private function throwExceptionOnFailure(): void
     {
-        throw_unless($this->code == 100, new SMSNotSentException($this->text));
+        if ($this->code == 100) {
+            return;
+        }
+
+        throw new SMSNotSentException($this->text);
     }
 }

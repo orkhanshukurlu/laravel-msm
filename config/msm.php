@@ -25,4 +25,5 @@ return [
      */
 
     'logging' => env('MSM_LOGGING', false),
+
 ];

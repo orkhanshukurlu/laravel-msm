@@ -62,7 +62,7 @@ try {
     // SMS uğurla göndərildi
     
 } catch (SMSNotSentException $exception) {    
-    Log::error($exception->getMessage());
+    dd($exception->getMessage());
     
     // SMS göndərilərkən xəta baş verdi
 }
@@ -70,13 +70,31 @@ try {
 ```
 ### Loglama
 
-Loglama aktiv olduqda hər SMS sorğusu üçün `msm_logs` cədvəlinə məlumat əlavə olunacaq
+Loglama aktiv olduqda hər SMS sorğusu göndərildikdə `msm_logs` cədvəlinə məlumat əlavə olunacaq
 
 > Hər hansısa nömrəyə göndərilən bütün SMS sorğuları haqqında məlumat əldə etmək üçün `getByPhone` metodundan istifadə edə bilərsiniz
 
 ```php
 
 MSMLog::getByPhone('+994773339800');
+
+```
+
+> MSM tərəfindən verilən dokumentasiyada qeyd olunan status kodlarına uyğun bütün SMS sorğuları haqqında məlumat əldə etmək üçün `getByCode` metodundan istifadə edə bilərsiniz
+
+```php
+
+MSMLog::getByCode(100);
+
+```
+
+> Əgər bu 2 metod istifadə edərkən cədvəldən bütün sütunları yox, ancaq istədiyiniz sütunları gətirmək istəyirsinizsə metodları aşağıdakı kimi istifadə edə bilərsiniz
+
+```php
+
+MSMLog::getByPhone('+994773339800', ['id', 'phone', 'message']);
+
+MSMLog::getByCode(100, ['id', 'phone', 'message', 'response_code']);
 
 ```
 

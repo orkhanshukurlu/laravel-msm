@@ -16,12 +16,12 @@ final class MSMServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (file_exists($file = __DIR__ . '/helpers.php')) {
-            require_once $file;
-        }
-
         if (! $this->app->runningInConsole()) {
             return;
+        }
+
+        if (file_exists($file = __DIR__ . '/helpers.php')) {
+            require_once $file;
         }
 
         $this->publishes([
@@ -40,7 +40,10 @@ final class MSMServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/msm.php', 'msm');
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/msm.php',
+            'msm'
+        );
 
         $this->app->singleton('msm', function (): MSM {
             return new MSM();
