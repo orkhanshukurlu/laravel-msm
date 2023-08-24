@@ -8,10 +8,17 @@ if (! function_exists('msm')) {
     /**
      * Get the available send SMS instance.
      *
+     * @param string|null $phone
+     * @param int|string|null $message
+     *
      * @return SendSMS
      */
-    function msm(): SendSMS
+    function msm(?string $phone, int|string|null $message): SendSMS
     {
-        return app(SendSMS::class);
+        if (func_num_args() === 0) {
+            return app(SendSMS::class);
+        }
+
+        return app(SendSMS::class)->send($phone, $message);
     }
 }
