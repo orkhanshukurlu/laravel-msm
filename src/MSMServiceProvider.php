@@ -7,6 +7,8 @@ namespace OrkhanShukurlu\MSM;
 use Illuminate\Support\ServiceProvider;
 use OrkhanShukurlu\MSM\Facades\MSM;
 
+use function file_exists;
+
 final class MSMServiceProvider extends ServiceProvider
 {
     /**
@@ -29,7 +31,9 @@ final class MSMServiceProvider extends ServiceProvider
         ], 'msm-config');
 
         $this->publishes([
-            __DIR__ . '/../database/migrations/create_msm_logs_table.php' => $this->app->databasePath('migrations/' . date('Y_m_d_His') . '_create_msm_logs_table.php'),
+            __DIR__ . '/../database/migrations/create_msm_logs_table.php' => $this->app->databasePath(
+                'migrations/' . date('Y_m_d_His') . '_create_msm_logs_table.php'
+            ),
         ], 'msm-migrations');
     }
 
@@ -40,13 +44,8 @@ final class MSMServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/../config/msm.php',
-            'msm'
-        );
+        $this->mergeConfigFrom(__DIR__ . '/../config/msm.php', 'msm');
 
-        $this->app->singleton('msm', function (): MSM {
-            return new MSM();
-        });
+        $this->app->singleton('msm', fn(): MSM => new MSM());
     }
 }
