@@ -10,6 +10,8 @@ use OrkhanShukurlu\MSM\Exceptions\SMSNotSentException;
 use OrkhanShukurlu\MSM\Models\MSMLog;
 use Throwable;
 
+use function parse_str;
+
 final class SendSMS
 {
     /**
@@ -84,7 +86,7 @@ final class SendSMS
     /**
      * Send SMS to phone number.
      *
-     * @param int|string $phone
+     * @param string $phone
      * @param int|string $message
      *
      * @throws SMSNotSentException
@@ -92,7 +94,7 @@ final class SendSMS
      *
      * @return void
      */
-    public function send(int|string $phone, int|string $message): void
+    public function send(string $phone, int|string $message): void
     {
         $body = $this->setQueryParams($phone, $message)->sendRequest()->body();
 
@@ -104,12 +106,12 @@ final class SendSMS
     /**
      * Log SMS to the database if logging is enabled.
      *
-     * @param int|string $phone
+     * @param string $phone
      * @param int|string $message
      *
      * @return void
      */
-    private function addLogIfEnabled(int|string $phone, int|string $message): void
+    private function addLogIfEnabled(string $phone, int|string $message): void
     {
         if ($this->logging !== true) {
             return;
@@ -153,12 +155,12 @@ final class SendSMS
     /**
      * Set query parameters for request.
      *
-     * @param int|string $phone
+     * @param string $phone
      * @param int|string $message
      *
      * @return $this
      */
-    private function setQueryParams(int|string $phone, int|string $message): self
+    private function setQueryParams(string $phone, int|string $message): self
     {
         $this->query = [
             'user' => $this->username,
