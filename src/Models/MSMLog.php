@@ -62,12 +62,12 @@ final class MSMLog extends Model
     /**
      * Get all log data by the phone number.
      *
-     * @param int|string $phone
+     * @param string $phone
      * @param string[] $columns
      *
      * @return Collection
      */
-    public static function getByPhone(int|string $phone, array $columns = ['*']): Collection
+    public static function getByPhone(string $phone, array $columns = ['*']): Collection
     {
         return self::query()
             ->where('phone', $phone)
