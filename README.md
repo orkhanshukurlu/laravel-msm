@@ -62,7 +62,7 @@ try {
     // SMS uğurla göndərildi
     
 } catch (SMSNotSentException $exception) {    
-    dd($exception->getMessage());
+    report($exception->getMessage());
     
     // SMS göndərilərkən xəta baş verdi
 }
