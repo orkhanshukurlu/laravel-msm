@@ -50,6 +50,10 @@ MSM::send('+994773339800', 'Hello world !');
 
 msm()->send('+994773339800', 'Hello world !');
 
+// və ya
+
+msm('+994773339800', 'Hello world !');
+
 ```
 
 `try-catch` blokunu istifadə edərək mümkün xətaları idarə edin
@@ -97,8 +101,6 @@ MSMLog::getByPhone('+994773339800', ['id', 'phone', 'message']);
 MSMLog::getByCode(100, ['id', 'phone', 'message', 'response_code']);
 
 ```
-
-> Göndərilən bütün SMS sorğuları daha ətraflı məlumat əldə etmək üçün `MSMLog` modelindən istifadə edə bilərsiniz
 
 ### Lisenziya
 
