@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('phone');
             $table->string('message');
-            $table->integer('response_code')->nullable();
+            $table->unsignedSmallInteger('response_code')->nullable();
             $table->string('response_text')->nullable();
             $table->timestamp('sent_at')->useCurrent();
         });
