@@ -7,7 +7,7 @@ namespace OrkhanShukurlu\MSM\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static void send(int|string $phone, int|string $message)
+ * @method static void send(string $phone, int|string $message)
  *
  * @see \OrkhanShukurlu\MSM\SendSMS
  */
