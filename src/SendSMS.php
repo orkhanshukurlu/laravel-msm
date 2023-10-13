@@ -136,8 +136,8 @@ final class SendSMS
     {
         parse_str($body, $response);
 
-        $this->code = $response['errno'] ?? null;
-        $this->text = $response['errtext'] ?? null;
+        $this->code = $response['errno'] ?? $this->code;
+        $this->text = $response['errtext'] ?? $this->text;
 
         return $this;
     }
