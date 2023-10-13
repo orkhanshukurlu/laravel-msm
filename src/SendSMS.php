@@ -113,7 +113,7 @@ final class SendSMS
      */
     private function addLogIfEnabled(string $phone, int|string $message): void
     {
-        if ($this->logging !== true) {
+        if (true !== $this->logging) {
             return;
         }
 
@@ -183,7 +183,7 @@ final class SendSMS
      */
     private function throwExceptionOnFailure(): void
     {
-        if ($this->code == 100) {
+        if (100 == $this->code) {
             return;
         }
 
