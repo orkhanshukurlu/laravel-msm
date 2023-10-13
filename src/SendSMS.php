@@ -77,10 +77,10 @@ final class SendSMS
      */
     public function __construct()
     {
-        $this->username = (string) config('msm.username', '');
-        $this->password = (string) config('msm.password', '');
-        $this->sender = (string) config('msm.sender', '');
-        $this->logging = (bool) config('msm.logging', false);
+        $this->username = config('msm.username', '');
+        $this->password = config('msm.password', '');
+        $this->sender = config('msm.sender', '');
+        $this->logging = config('msm.logging', false);
     }
 
     /**
