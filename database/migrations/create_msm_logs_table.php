@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('response_code')->nullable();
             $table->string('response_text')->nullable();
             $table->timestamp('sent_at')->useCurrent();
+            $table->index(['phone', 'response_code']);
         });
     }
 
