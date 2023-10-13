@@ -26,14 +26,14 @@ final class SendSMS
      *
      * @var string|null
      */
-    private ?string $code;
+    private ?string $code = null;
 
     /**
      * Response text from request.
      *
      * @var string|null
      */
-    private ?string $text;
+    private ?string $text = null;
 
     /**
      * Query parameters for request.
