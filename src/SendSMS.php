@@ -22,11 +22,32 @@ final class SendSMS
     private const URL = 'https://api.msm.az/sendsms';
 
     /**
-     * Username provided by MSM.
+     * Response code from request.
      *
-     * @var string
+     * @var string|null
      */
-    private string $username;
+    private ?string $code;
+
+    /**
+     * Response text from request.
+     *
+     * @var string|null
+     */
+    private ?string $text;
+
+    /**
+     * Query parameters for request.
+     *
+     * @var array
+     */
+    private array $query = [];
+
+    /**
+     * Enable or disable database SMS logging mode.
+     *
+     * @var bool
+     */
+    private bool $logging;
 
     /**
      * Password provided by MSM.
@@ -43,32 +64,11 @@ final class SendSMS
     private string $sender;
 
     /**
-     * Enable or disable database SMS logging mode.
+     * Username provided by MSM.
      *
-     * @var bool
+     * @var string
      */
-    private bool $logging;
-
-    /**
-     * Query parameters for request.
-     *
-     * @var array
-     */
-    private array $query = [];
-
-    /**
-     * Response code from request.
-     *
-     * @var string|null
-     */
-    private ?string $code;
-
-    /**
-     * Response text from request.
-     *
-     * @var string|null
-     */
-    private ?string $text;
+    private string $username;
 
     /**
      * Create a new send SMS instance.
