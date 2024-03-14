@@ -12,7 +12,7 @@ use Throwable;
 
 use function parse_str;
 
-final class SendSMS
+class SendSMS
 {
     /**
      * Api url provided by MSM.
@@ -113,7 +113,7 @@ final class SendSMS
      */
     private function addLogIfEnabled(string $phone, int|string $message): void
     {
-        if (true !== $this->logging) {
+        if (! $this->logging) {
             return;
         }
 
@@ -183,7 +183,7 @@ final class SendSMS
      */
     private function throwExceptionOnFailure(): void
     {
-        if (100 == $this->code) {
+        if ($this->code == 100) {
             return;
         }
 
