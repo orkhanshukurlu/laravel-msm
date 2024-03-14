@@ -6,6 +6,6 @@ namespace OrkhanShukurlu\MSM\Exceptions;
 
 use Exception;
 
-final class SMSNotSentException extends Exception
+class SMSNotSentException extends Exception
 {
 }
