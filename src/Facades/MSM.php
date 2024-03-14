@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @see \OrkhanShukurlu\MSM\SendSMS
  */
-final class MSM extends Facade
+class MSM extends Facade
 {
     /**
      * Get the registered name of the component.
