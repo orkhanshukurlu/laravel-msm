@@ -9,7 +9,7 @@ use OrkhanShukurlu\MSM\Facades\MSM;
 
 use function file_exists;
 
-final class MSMServiceProvider extends ServiceProvider
+class MSMServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
