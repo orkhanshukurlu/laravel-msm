@@ -7,7 +7,7 @@ namespace OrkhanShukurlu\MSM\Models;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-final class MSMLog extends Model
+class MSMLog extends Model
 {
     /**
      * Indicates if the model should be timestamped.
@@ -15,15 +15,6 @@ final class MSMLog extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'sent_at' => 'datetime',
-    ];
 
     /**
      * The attributes that are mass assignable.
@@ -43,6 +34,18 @@ final class MSMLog extends Model
      * @var string
      */
     protected $table = 'msm_logs';
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'sent_at' => 'datetime',
+        ];
+    }
 
     /**
      * Get all log data by the response code.
