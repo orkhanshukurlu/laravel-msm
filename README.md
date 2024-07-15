@@ -4,8 +4,8 @@ Laravel MSM - MSM provayderi vasitəsilə SMS göndərilməsini təmin edən Lar
 
 [![Laravel 10](https://img.shields.io/badge/Laravel-10-red.svg)](http://laravel.com)
 [![Latest Stable Version](https://img.shields.io/packagist/v/orkhanshukurlu/laravel-msm.svg)](https://packagist.org/packages/orkhanshukurlu/laravel-msm)
-[![Total Downloads](https://poser.pugx.org/orkhanshukurlu/laravel-msm/downloads.png)](https://packagist.org/packages/orkhanshukurlu/laravel-msm)
-[![License](http://poser.pugx.org/orkhanshukurlu/laravel-msm/license)](https://packagist.org/packages/orkhanshukurlu/laravel-msm)
+[![Total Downloads](https://poser.pugx.org/orkhanshukurlu/laravel-msm/downloads)](https://packagist.org/packages/orkhanshukurlu/laravel-msm)
+[![License](https://poser.pugx.org/orkhanshukurlu/laravel-msm/license)](https://packagist.org/packages/orkhanshukurlu/laravel-msm)
 
 
 ## Quraşdırma
