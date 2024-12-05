@@ -34,6 +34,9 @@ class MSMServiceProvider extends ServiceProvider
             __DIR__ . '/../database/migrations/create_msm_logs_table.php' => $this->app->databasePath(
                 'migrations/' . date('Y_m_d_His') . '_create_msm_logs_table.php'
             ),
+            __DIR__ . '/../database/migrations/create_indexes_on_msm_logs_table.php.php' => $this->app->databasePath(
+                'migrations/' . date('Y_m_d_His') . '_create_indexes_on_msm_logs_table.php'
+            ),
         ], 'msm-migrations');
     }
 
